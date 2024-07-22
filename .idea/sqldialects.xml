@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/5. SQL View - Index - Stored Procedure/View, Index, Store Procedure.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/CacHamThongDungSQL.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/QLSV.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/minitest1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/minitest2.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/minitest3.sql" dialect="MySQL" />
   </component>
 </project>
