@@ -298,3 +298,36 @@ FROM
     VatTu vt ON ctpx.ma_Vat_Tu = vt.ma_Vat_Tu;
 select * from vw_CTPXUAT_VT_PX;
 
+/* Câu 1. Tạo Stored procedure (SP) cho biết tổng số lượng cuối của vật tư với mã vật tư là tham số vào. */
+DELIMITER $$
+CREATE PROCEDURE `sp_TongSoLuongCuoi_VatTu` (IN `ma_Vat_Tu` INT)
+BEGIN
+    SELECT
+        SUM(so_Luong_Xuat) AS tong_so_luong_cuoi
+    FROM
+        ChiTietPhieuXuat
+    WHERE
+        ma_Vat_Tu = `ma_Vat_Tu`;
+END$$
+DELIMITER ;
+
+CALL sp_TongSoLuongCuoi_VatTu(2);
+
+/* Câu 2. Tạo SP cho biết tổng tiền xuất của vật tư với mã vật tư là tham số vào. */
+DELIMITER $$
+
+CREATE PROCEDURE `sp_TongTienXuat_VatTu` (IN `ma_Vat_Tu` INT)
+BEGIN
+    SELECT
+        SUM(so_Luong_Xuat * don_Gia_Xuat) AS tong_tien_xuat
+    FROM
+        ChiTietPhieuXuat
+    WHERE
+        ma_Vat_Tu = `ma_Vat_Tu`;
+END$$
+
+DELIMITER ;
+
+CALL sp_TongTienXuat_VatTu(2);
+
+
